@@ -1,20 +1,13 @@
 ---
-import Counter from '../components/Counter.svelte';
-import Svg from '../components/Svg.md';
+import '@/styles/globals.css'
+import { Button } from "@/components/ui/button"
 ---
-
+ 
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
 	<body>
-		<Svg />
-		<h1>A Lifetime at Sea</h1>
-		<Counter client:load />
-		<img src = "/LifetimeAtSea.svg" alt="My Happy SVG"/>
+		<Button>Hello World</Button>
 	</body>
 </html>

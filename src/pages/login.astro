@@ -1,18 +1,34 @@
 ---
-import Header from '../components/Header.astro';
-import Container from '../components/Container.astro';
+const myFunction = () => {
+				alert('myFunction')
+			}
+function submitForm(event) {
+	console.log(JSON.stringify(event))
+    event.preventDefault();
+    // Use JavaScript to send data to a specific URL
+	const form = event.target;
+					const formData = new FormData(form);
+					const data = Object.fromEntries(formData);
+  }
 ---
 
 <html lang="en">
 	<head>
 		<title>Online Store</title>
-		<style>
-			h1 {
-				font-size: 36px;
-			}
-		</style>
+	
 
 		<script type="module" is:inline>
+
+function submitForm() {
+	console.log(JSON.stringify(event))
+    event.preventDefault();
+    // Use JavaScript to send data to a specific URL
+	const form = event.target;
+					const formData = new FormData(form);
+					const data = Object.fromEntries(formData);
+  }
+
+
 			document.addEventListener('DOMContentLoaded', () => {
 				console.log('loaded');
 				document.querySelector('form').addEventListener('submit', (e) => {
@@ -27,6 +43,7 @@ import Container from '../components/Container.astro';
 					})
 						.then((res) => res.json())
 						.then((data) => {
+							console.log(JSON.stringify(data))
 							document.querySelector('#result').innerHTML =
 								'Progressive login was successful! you will be redirected to the store in 3 seconds';
 							setTimeout(() => (location.href = '/'), 3000);
@@ -47,5 +64,32 @@ import Container from '../components/Container.astro';
 				<input type="submit" value="Submit" />
 			</form>
 			<div id="result"></div>
+			<form action="javascript:alert('Hello there, I am being submitted');">
+				<button type="submit">
+					Let's do it
+				</button>
+			</form>
+			<form onsubmit="submitForm(this.e)"> 
+				<button type="submit">
+				Let's call submitForm
+			</button>
+			<input type="submit" value="Submit">
+			<input type="submit" formenctype="multipart/form-data" value="Submit as Multipart/form-data">
+			<button type="button" onclick="alert('Hello World!')">Click Me!</button>
+			<input type="submit" value="Submit using GET">
+			<input type="submit" formmethod="post" value="Submit using POST">
+			<input type="submit" formnovalidate="formnovalidate" value="Submit without validation">
+		</form>
+		<script>
+
+			function submitForm(event) {
+				console.log(JSON.stringify(event))
+				event.preventDefault();
+				// Use JavaScript to send data to a specific URL
+				const form = event.target;
+								const formData = new FormData(form);
+								const data = Object.fromEntries(formData);
+			  }
+			  </script>
 	</body>
 </html>
