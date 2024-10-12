@@ -1,5 +1,12 @@
 # Astro Starter Kit: Minimal
 
+## v0.dev
+```sh
+npx shadcn@latest add "https://v0.dev/chat/b/b_qQ6qIv4HvZh?token=eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..aONc9IEbLnF47_CB.n0ABGr9fJz43rllkixafGgulWm9U4eOo5J0I2cK9pMZHx8kgoChr_3lm-A0.hUqt4IgVa4clY1btH8i0_Q"
+```
+
+## astro
+
 ```sh
 npm create astro@latest -- --template minimal
 ```
